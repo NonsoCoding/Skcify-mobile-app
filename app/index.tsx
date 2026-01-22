@@ -7,10 +7,7 @@ interface IWebMainProps {
     navigation?: any;
 }
 
-const WebViewMain = ({
-    navigation
-}: IWebMainProps) => {
-
+const WebViewMain = ({ navigation }: IWebMainProps) => {
     const [isConnected, setIsConnected] = useState<any>(null);
 
     useEffect(() => {
@@ -27,56 +24,51 @@ const WebViewMain = ({
 
     if (isConnected === null) {
         return (
-            <View style={styles.centered}>
-                <ActivityIndicator size={"large"} color={"#000"} />
-                <Text style={{
-                    alignSelf: "center"
-                }}>Loading...</Text>
-            </View>
-        );
+            <ActivityIndicator/>
+        )
     }
 
     if (!isConnected) {
         return (
             <View style={styles.centered}>
                 <Text style={styles.offlineText}>You're offline</Text>
-                <Text style={{
-                    alignSelf: "center"
-                }}>Please connect to the internet to view the content</Text>
+                <Text style={{ alignSelf: "center" }}>
+                    Please connect to the internet to view the content
+                </Text>
             </View>
-        )
+        );
     }
 
     return (
         <View style={styles.container}>
             <WebView
-            source={{uri: 'https://skcify.netlify.app'}}
-            startInLoadingState={true}
-            style={styles.webview}
+                source={{ uri: "https://skcify.netlify.app" }}
+                startInLoadingState={true}
+                style={styles.webview}
             />
         </View>
-    )
-}
+    );
+};
 
 export default WebViewMain;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 60
+        paddingTop: 60,
     },
     webview: {
-        flex: 1
+        flex: 1,
     },
     centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  offlineText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: 'red',
-  },
-})
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    offlineText: {
+        fontSize: 20,
+        fontWeight: "bold",
+        marginBottom: 10,
+        color: "red",
+    },
+});

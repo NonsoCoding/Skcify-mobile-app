@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon-dark.png",
-       "imageWidth": 200,
+      "imageWidth": 200,
       "resizeMode": "contain",
       "backgroundColor": "#ffffff",
       "dark": {
@@ -20,7 +20,7 @@
     },
     "ios": {
       "supportsTablet": true,
-       "icon": {
+      "icon": {
         "dark": "./assets/images/ios-dark.png",
         "light": "./assets/images/ios-light.png",
         "tinted": "./assets/images/ios-tinted.png"
@@ -45,6 +45,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "46622e39-c9c7-4bd6-8a35-2252515287e3"
+      }
     }
   }
 }
